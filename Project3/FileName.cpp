@@ -203,6 +203,11 @@ poly3* link_add(poly3* X, poly3* Y, poly3* Z)  //연결 구조체를 이용한 다항식 덧�
 				r->link = NULL;  r2->link = r; r2 = r;
 				r = (poly3*)malloc(sizeof(struct poly3));
 			}
+			else if (p->coef + q->coef == 0)
+			{
+				r->link = NULL;  r2->link = r; r2 = r;
+				r = (poly3*)malloc(sizeof(struct poly3));
+			}
 			p = p->link;  q = q->link;
 		}
 		else if (p->exp > q->exp)  //다항식 X의 차수가 더 크면?
@@ -258,6 +263,11 @@ poly3* link_sub(poly3* X, poly3* Y, poly3* W)  //연결 구조체를 이용한 다항식 뺄�
 			if (p->coef != q->coef)
 			{
 				r->coef = p->coef - q->coef; r->exp = p->exp;
+				r->link = NULL;  r2->link = r; r2 = r;
+				r = (poly3*)malloc(sizeof(struct poly3));
+			}
+			else if (p->coef == q->coef)
+			{
 				r->link = NULL;  r2->link = r; r2 = r;
 				r = (poly3*)malloc(sizeof(struct poly3));
 			}
@@ -322,8 +332,8 @@ void main()
 
 	while (1) //무한루프
 	{
-		printf("\n\n\n 메뉴 1)성적처리(배열)  2)다항식-1 덧뺄셈  3)다항식-2 덧뺄셈");
-		printf("4)성적처리  5)성적처리(연결구조체) 6)다항식 덧뺄셈(연결구조체)   7)     8)종료: ");
+		printf("\n\n\n 메뉴 1)성적처리(배열)  2)다항식-1 덧뺄셈  3)다항식-2 덧뺄셈 4)성적처리  ");
+		printf("\n 5)성적처리(연결구조체)  6)다항식 덧뺄셈(연결구조체)   7)     8)종료: ");
 		scanf_s("%d", &menu);
 		if (menu == 8) break;
 		switch (menu) {
