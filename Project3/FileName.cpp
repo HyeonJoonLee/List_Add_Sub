@@ -203,11 +203,6 @@ poly3* link_add(poly3* X, poly3* Y, poly3* Z)  //¿¬°á ±¸Á¶Ã¼¸¦ ÀÌ¿ëÇÑ ´ÙÇ×½Ä µ¡¼
 				r->link = NULL;  r2->link = r; r2 = r;
 				r = (poly3*)malloc(sizeof(struct poly3));
 			}
-			else if (p->coef + q->coef == 0)
-			{
-				r->link = NULL;  r2->link = r; r2 = r;
-				r = (poly3*)malloc(sizeof(struct poly3));
-			}
 			p = p->link;  q = q->link;
 		}
 		else if (p->exp > q->exp)  //´ÙÇ×½Ä XÀÇ Â÷¼ö°¡ ´õ Å©¸é?
@@ -234,6 +229,7 @@ poly3* link_add(poly3* X, poly3* Y, poly3* Z)  //¿¬°á ±¸Á¶Ã¼¸¦ ÀÌ¿ëÇÑ ´ÙÇ×½Ä µ¡¼
 			r = (poly3*)malloc(sizeof(struct poly3));
 			q = q->link;
 		}
+		r2->link = NULL;
 	}
 	else if (q == NULL)
 	{
@@ -244,6 +240,7 @@ poly3* link_add(poly3* X, poly3* Y, poly3* Z)  //¿¬°á ±¸Á¶Ã¼¸¦ ÀÌ¿ëÇÑ ´ÙÇ×½Ä µ¡¼
 			r = (poly3*)malloc(sizeof(struct poly3));
 			p = p->link;
 		}
+		r2->link = NULL;
 	}
 	return Z;
 }
@@ -263,11 +260,6 @@ poly3* link_sub(poly3* X, poly3* Y, poly3* W)  //¿¬°á ±¸Á¶Ã¼¸¦ ÀÌ¿ëÇÑ ´ÙÇ×½Ä »¬¼
 			if (p->coef != q->coef)
 			{
 				r->coef = p->coef - q->coef; r->exp = p->exp;
-				r->link = NULL;  r2->link = r; r2 = r;
-				r = (poly3*)malloc(sizeof(struct poly3));
-			}
-			else if (p->coef == q->coef)
-			{
 				r->link = NULL;  r2->link = r; r2 = r;
 				r = (poly3*)malloc(sizeof(struct poly3));
 			}
@@ -297,6 +289,7 @@ poly3* link_sub(poly3* X, poly3* Y, poly3* W)  //¿¬°á ±¸Á¶Ã¼¸¦ ÀÌ¿ëÇÑ ´ÙÇ×½Ä »¬¼
 			r = (poly3*)malloc(sizeof(struct poly3));
 			q = q->link;
 		}
+		r2->link = NULL;
 	}
 	else if (q == NULL)
 	{
@@ -307,6 +300,7 @@ poly3* link_sub(poly3* X, poly3* Y, poly3* W)  //¿¬°á ±¸Á¶Ã¼¸¦ ÀÌ¿ëÇÑ ´ÙÇ×½Ä »¬¼
 			r = (poly3*)malloc(sizeof(struct poly3));
 			p = p->link;
 		}
+		r2->link = NULL;
 	}
 	return W;
 }

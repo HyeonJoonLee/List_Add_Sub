@@ -1,0 +1,12 @@
+﻿빌드 시작...
+1>------ 빌드 시작: 프로젝트: Project3, 구성: Debug x64 ------
+1>FileName.cpp
+1>C:\Users\lhj01\source\repos\HyeonJoonLee\List_Add_Sub\Project3\FileName.cpp(36,15): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+1>C:\Users\lhj01\source\repos\HyeonJoonLee\List_Add_Sub\Project3\FileName.cpp(184,27): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+1>C:\Users\lhj01\source\repos\HyeonJoonLee\List_Add_Sub\Project3\FileName.cpp(309,1): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+1>C:\Users\lhj01\source\repos\HyeonJoonLee\List_Add_Sub\Project3\FileName.cpp(418,21): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+1>C:\Users\lhj01\source\repos\HyeonJoonLee\List_Add_Sub\Project3\FileName.cpp(310,15): warning C4101: 'n' :참조되지 않은 지역 변수입니다.
+1>Project3.vcxproj -> C:\Users\lhj01\source\repos\HyeonJoonLee\List_Add_Sub\x64\Debug\Project3.exe
+1>"Project3.vcxproj" 프로젝트를 빌드했습니다.
+========== 빌드: 1개 성공, 0개 실패, 0개 최신 상태, 0개 건너뜀 ==========
+========== 00:01.902 경과 ==========
